@@ -1,47 +1,45 @@
 #!/usr/bin/python3
 __author__ = "Dr. Kamlesh K. Sahu"
-__version__ = "v 0.1"
+__version__ = "v 0.2"
 
 
 os1a = input("Enter first file  - ")
+os1af = os1a.split(".")
 os1  = open(os1a)
 os2a = input("Enter second file - ")
+os2af = os2a.split(".")
 os2  = open(os2a)
 os3a = input("Enter third file  - ")
+os3af = os3a.split(".")
 os3  = open(os3a)
 
-cm12  = open("Common_in_1_2.txt", "w")
-cm23  = open("Common_in_2_3.txt", "w")
-cm13  = open("Common_in_1_3.txt", "w")
-cm123 = open("Common_in_1_2_3.txt", "w")
+cm12  = open("Common_in_" + os1af[0] +"-"+ os2af[0] +".txt", "w")
+cm23  = open("Common_in_" + os2af[0] +"-"+ os3af[0] +".txt", "w")
+cm13  = open("Common_in_" + os1af[0] +"-"+ os3af[0] +".txt", "w")
+cm123 = open("Common_in_" + os1af[0] +"-"+ os2af[0] +"-"+ os3af[0] +".txt", "w")
 
-unique1  = open("Unique_in_"+os1a, "w")
-unique2  = open("Unique_in_"+os2a, "w")
-unique3  = open("Unique_in_"+os3a, "w")
+unique1  = open("Unique_in_"+os1af[0]+".txt", "w")
+unique2  = open("Unique_in_"+os2af[0]+".txt", "w")
+unique3  = open("Unique_in_"+os3af[0]+".txt", "w")
 
-l1 = []
-l2 = []
-l3 = []
+l1 = [];l2 = [];l3 = []
+
 common12 = []
 common23 = []
 common13 = []
 common123 = []
 
-total12 = []
-total23 = []
-total13 = []
+total12 = [];total23 = [];total13 = []
 
-u1 = []
-u2 = []
-u3 = []
+u1 = [];u2 = [];u3 = []
 
 
 for line in os1:
 	l1.append(line.strip())
-	
+
 for line in os2:
 	l2.append(line.strip())
-	
+
 for line in os3:
 	l3.append(line.strip())
 
